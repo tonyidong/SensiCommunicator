@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F506D15D1A337A75004AC695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D15C1A337A75004AC695 /* AppDelegate.swift */; };
+		F506D15F1A337A75004AC695 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D15E1A337A75004AC695 /* ViewController.swift */; };
+		F506D1621A337A75004AC695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F506D1601A337A75004AC695 /* Main.storyboard */; };
+		F506D1641A337A75004AC695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F506D1631A337A75004AC695 /* Images.xcassets */; };
+		F506D1671A337A75004AC695 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F506D1651A337A75004AC695 /* LaunchScreen.xib */; };
+		F506D1731A337A75004AC695 /* SensiCommunicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D1721A337A75004AC695 /* SensiCommunicatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F506D16D1A337A75004AC695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F506D14F1A337A75004AC695 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F506D1561A337A75004AC695;
+			remoteInfo = SensiCommunicator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F506D1571A337A75004AC695 /* SensiCommunicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensiCommunicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F506D15B1A337A75004AC695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F506D15C1A337A75004AC695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F506D15E1A337A75004AC695 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F506D1611A337A75004AC695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F506D1631A337A75004AC695 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F506D1661A337A75004AC695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F506D16C1A337A75004AC695 /* SensiCommunicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensiCommunicatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F506D1711A337A75004AC695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F506D1721A337A75004AC695 /* SensiCommunicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensiCommunicatorTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F506D1541A337A75004AC695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F506D1691A337A75004AC695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F506D14E1A337A75004AC695 = {
+			isa = PBXGroup;
+			children = (
+				F506D1591A337A75004AC695 /* SensiCommunicator */,
+				F506D16F1A337A75004AC695 /* SensiCommunicatorTests */,
+				F506D1581A337A75004AC695 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F506D1581A337A75004AC695 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F506D1571A337A75004AC695 /* SensiCommunicator.app */,
+				F506D16C1A337A75004AC695 /* SensiCommunicatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F506D1591A337A75004AC695 /* SensiCommunicator */ = {
+			isa = PBXGroup;
+			children = (
+				F506D15C1A337A75004AC695 /* AppDelegate.swift */,
+				F506D15E1A337A75004AC695 /* ViewController.swift */,
+				F506D1601A337A75004AC695 /* Main.storyboard */,
+				F506D1631A337A75004AC695 /* Images.xcassets */,
+				F506D1651A337A75004AC695 /* LaunchScreen.xib */,
+				F506D15A1A337A75004AC695 /* Supporting Files */,
+			);
+			path = SensiCommunicator;
+			sourceTree = "<group>";
+		};
+		F506D15A1A337A75004AC695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F506D15B1A337A75004AC695 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F506D16F1A337A75004AC695 /* SensiCommunicatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				F506D1721A337A75004AC695 /* SensiCommunicatorTests.swift */,
+				F506D1701A337A75004AC695 /* Supporting Files */,
+			);
+			path = SensiCommunicatorTests;
+			sourceTree = "<group>";
+		};
+		F506D1701A337A75004AC695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F506D1711A337A75004AC695 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F506D1561A337A75004AC695 /* SensiCommunicator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F506D1761A337A75004AC695 /* Build configuration list for PBXNativeTarget "SensiCommunicator" */;
+			buildPhases = (
+				F506D1531A337A75004AC695 /* Sources */,
+				F506D1541A337A75004AC695 /* Frameworks */,
+				F506D1551A337A75004AC695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SensiCommunicator;
+			productName = SensiCommunicator;
+			productReference = F506D1571A337A75004AC695 /* SensiCommunicator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F506D16B1A337A75004AC695 /* SensiCommunicatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F506D1791A337A75004AC695 /* Build configuration list for PBXNativeTarget "SensiCommunicatorTests" */;
+			buildPhases = (
+				F506D1681A337A75004AC695 /* Sources */,
+				F506D1691A337A75004AC695 /* Frameworks */,
+				F506D16A1A337A75004AC695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F506D16E1A337A75004AC695 /* PBXTargetDependency */,
+			);
+			name = SensiCommunicatorTests;
+			productName = SensiCommunicatorTests;
+			productReference = F506D16C1A337A75004AC695 /* SensiCommunicatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F506D14F1A337A75004AC695 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = GlobalHackIII;
+				TargetAttributes = {
+					F506D1561A337A75004AC695 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					F506D16B1A337A75004AC695 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = F506D1561A337A75004AC695;
+					};
+				};
+			};
+			buildConfigurationList = F506D1521A337A75004AC695 /* Build configuration list for PBXProject "SensiCommunicator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F506D14E1A337A75004AC695;
+			productRefGroup = F506D1581A337A75004AC695 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F506D1561A337A75004AC695 /* SensiCommunicator */,
+				F506D16B1A337A75004AC695 /* SensiCommunicatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F506D1551A337A75004AC695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F506D1621A337A75004AC695 /* Main.storyboard in Resources */,
+				F506D1671A337A75004AC695 /* LaunchScreen.xib in Resources */,
+				F506D1641A337A75004AC695 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F506D16A1A337A75004AC695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F506D1531A337A75004AC695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F506D15F1A337A75004AC695 /* ViewController.swift in Sources */,
+				F506D15D1A337A75004AC695 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F506D1681A337A75004AC695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F506D1731A337A75004AC695 /* SensiCommunicatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F506D16E1A337A75004AC695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F506D1561A337A75004AC695 /* SensiCommunicator */;
+			targetProxy = F506D16D1A337A75004AC695 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F506D1601A337A75004AC695 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F506D1611A337A75004AC695 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F506D1651A337A75004AC695 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F506D1661A337A75004AC695 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F506D1741A337A75004AC695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F506D1751A337A75004AC695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F506D1771A337A75004AC695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SensiCommunicator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F506D1781A337A75004AC695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SensiCommunicator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F506D17A1A337A75004AC695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SensiCommunicatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensiCommunicator.app/SensiCommunicator";
+			};
+			name = Debug;
+		};
+		F506D17B1A337A75004AC695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SensiCommunicatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensiCommunicator.app/SensiCommunicator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F506D1521A337A75004AC695 /* Build configuration list for PBXProject "SensiCommunicator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F506D1741A337A75004AC695 /* Debug */,
+				F506D1751A337A75004AC695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F506D1761A337A75004AC695 /* Build configuration list for PBXNativeTarget "SensiCommunicator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F506D1771A337A75004AC695 /* Debug */,
+				F506D1781A337A75004AC695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F506D1791A337A75004AC695 /* Build configuration list for PBXNativeTarget "SensiCommunicatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F506D17A1A337A75004AC695 /* Debug */,
+				F506D17B1A337A75004AC695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F506D14F1A337A75004AC695 /* Project object */;
+}
