@@ -13,6 +13,8 @@
 		F506D1641A337A75004AC695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F506D1631A337A75004AC695 /* Images.xcassets */; };
 		F506D1671A337A75004AC695 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F506D1651A337A75004AC695 /* LaunchScreen.xib */; };
 		F506D1731A337A75004AC695 /* SensiCommunicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D1721A337A75004AC695 /* SensiCommunicatorTests.swift */; };
+		F506D17D1A337A9A004AC695 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D17C1A337A9A004AC695 /* Communicator.swift */; };
+		F506D17F1A33852B004AC695 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D17E1A33852B004AC695 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		F506D16C1A337A75004AC695 /* SensiCommunicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensiCommunicatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F506D1711A337A75004AC695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F506D1721A337A75004AC695 /* SensiCommunicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensiCommunicatorTests.swift; sourceTree = "<group>"; };
+		F506D17C1A337A9A004AC695 /* Communicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		F506D17E1A33852B004AC695 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		F506D14E1A337A75004AC695 = {
 			isa = PBXGroup;
 			children = (
+				F506D17C1A337A9A004AC695 /* Communicator.swift */,
 				F506D1591A337A75004AC695 /* SensiCommunicator */,
 				F506D16F1A337A75004AC695 /* SensiCommunicatorTests */,
 				F506D1581A337A75004AC695 /* Products */,
@@ -77,6 +82,7 @@
 		F506D1591A337A75004AC695 /* SensiCommunicator */ = {
 			isa = PBXGroup;
 			children = (
+				F506D17E1A33852B004AC695 /* SwiftyJSON.swift */,
 				F506D15C1A337A75004AC695 /* AppDelegate.swift */,
 				F506D15E1A337A75004AC695 /* ViewController.swift */,
 				F506D1601A337A75004AC695 /* Main.storyboard */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F506D17D1A337A9A004AC695 /* Communicator.swift in Sources */,
 				F506D15F1A337A75004AC695 /* ViewController.swift in Sources */,
 				F506D15D1A337A75004AC695 /* AppDelegate.swift in Sources */,
+				F506D17F1A33852B004AC695 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
