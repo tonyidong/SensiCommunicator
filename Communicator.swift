@@ -10,37 +10,56 @@ import Foundation
 import CoreLocation
 
 class Communicator {
-    let baseURL = "http://54.148.7.254/"
+    let baseURL = "http://54.148.7.254/" //Server URL
+    
+    // Different Methods name, will be followed by a .php in the getRequest method
     let setTempMethod = "settemperature"
     let setLocMethod = "setlocation"
     let getDeviceInfoMethod = "getdeviceinfo"
     let getDeviceDataMethod = "getdevicedata"
     
+    // The ThermoStat ID
     var deviceID : Int
+    
+    // User's Mobile ID
     var userID : Int
+    
+    // If this is true, the user can modify the thermoStat
     var isController : Bool
+    
+    // List of Sensi Infomation Object, which handles if the household has multiple HVAC
     var sensiInfoAry : [SensiInfo]
-    var pattern : Dictionary<Int, (Float, Float)>
+    
+    // The Learned Curve and Suggested Curve, will be presented as a list of Object
+    var pattern : [DeviceData]
+    
+    // For Core Location
     var locationManager : CLLocationManager
     
     lazy var data = NSMutableData()
     
+    
+    // Hard code in User and Device Information, both any int from 1-3
     init () {
         deviceID = 1
         userID = 1
         isController = false
         sensiInfoAry = Array<SensiInfo>()
-        pattern = Dictionary<Int, (Float, Float)>()
+        pattern = Array<DeviceData>()
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
+        
+        // When First load, run this method once to get initial information
         self.getSensiInfo()
         
     }
     
+    
+    // Handles different methods with different parameters to form a request URL
     func getRequest(method: String, param: Dictionary<String, String>) -> NSURL {
         var result = baseURL + method + ".php?"
         for key in param.keys {
@@ -56,6 +75,7 @@ class Communicator {
     }
     
     
+    // To Set the Sensi to a desired Temperature
     // Assuming the passed in Dictionary with Key named "temperature"
     // Value is the desired temperature to set the Sensi to
     func setTemp(temperatureToSetDict : Dictionary<String, Int>) -> Bool {
@@ -66,11 +86,7 @@ class Communicator {
 
         var toReturn = false
         
-        
-//        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
-//        
-//        connection.start()
-//        let url = NSURL(string: "http://54.148.7.254/settemperature.php?devicekey=1&setpoint=78&userkey=1")
+        // To Handle the GET request
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(request) {(data, response, error) in
             
@@ -87,19 +103,26 @@ class Communicator {
     }
     
     
+    // Utilize Core Location
     // Assume Dictinary["location", tuple (Latitude, Longitude)]
     func setLocation() -> Bool{
         return true
     }
     
+    
+    // Need to do this periodically
     func getUserLocation() -> (Double, Double) {
         
         return (0.0, 0.0)
     }
     
+    
+    // Get Wether Information from a third Party API: wunderground.com, pass in ZIP code to get different information
+    // For St. Louis, Pass in 63130
     func getWeatherForZip(zipCpde: NSString) -> Dictionary<String, String> {
-//        var weatherBaseString = "http://api.wunderground.com/api/163809ff8d2f1239/conditions/q/CA/\(zipCpde).json"
-        var weatherBaseURL = NSURL(string: "http://api.wunderground.com/api/163809ff8d2f1239/conditions/q/CA/\(zipCpde).json")
+        var weatherBaseURL = NSURL(string: "http://api.wunderground.com/api/163809ff8d2f1239/conditions/q/MO/\(zipCpde).json")
+        
+        println("http://api.wunderground.com/api/163809ff8d2f1239/conditions/q/CA/\(zipCpde).json")
         
         var toReturn = Dictionary<String, String>()
         
@@ -107,9 +130,12 @@ class Communicator {
         let task = NSURLSession.sharedSession().dataTaskWithURL(weatherBaseURL!) {(data, response, error) in
             
              var json = JSON(data: data)
+            println(json["current_observation"]["temperature_string"].stringValue)
             
-            toReturn["temperature"] = json["temperature_string"].stringValue
-            toReturn["temp_f"] = json["temp_f"].stringValue
+            toReturn["temperature"] = json["current_observation"]["temperature_string"].stringValue
+            
+            println(toReturn["temperature"])
+//            toReturn["temp_f"] = json["current_observation"]["temp_f"].stringValue
             
         }
         
@@ -119,6 +145,8 @@ class Communicator {
     }
     
     
+    
+    // Get information From Server to form a list of SensiInfo Object, defined below
     func getSensiInfo() -> ([SensiInfo], userIsController: Bool) {
         var toPassIn: [String: String] = ["userkey": "\(userID)", "devicekey": "\(deviceID)"]
         var request = getRequest(getDeviceInfoMethod, param: toPassIn)
@@ -146,6 +174,8 @@ class Communicator {
         return (toReturnAry, toReturnBool)
     }
     
+    
+    // Get Info from Server to form a list of DeviceData Object, defined Below
     func getPattern(startTime: NSDate, endTime: NSDate) -> [DeviceData] {
         
         var toReturn = Array<DeviceData>()
@@ -175,8 +205,14 @@ class Communicator {
 }
 
 class DeviceData {
+    // Data point timestamp, it should be a UTC time object, however, is counted as how many seconds
+    // were passed from 1970. Therefore is a big integer, this should be the x-axis of the data point
     var timeStamp : Int
+    
+    // The suggested Temperature of the time point, should y_1
     var suggestedTemp: Float
+    
+    // The ThermoStat sensed Temperature, should be y_2
     var sensedTemp: Float
     
     init(stamp: Int, suggest: Float, sensed: Float) {
@@ -186,18 +222,21 @@ class DeviceData {
     }
 }
 
+
+
 class SensiInfo {
-    var deviceKey : Int
-    var deviceName : String
-    var isController : Bool
-    var roomTemperature : Float
-    var setPointTemperature : Int
-    var humidity : Float
-    var batteryLevel : Int
-    var mode : String
-    var status : String
-    var siteKey : Int
-    var siteName : String
+    
+    var deviceKey : Int // ThermoStat Key
+    var deviceName : String // ThermoStat Name
+    var isController : Bool // indicating the user who generated this object has the right to change temperature
+    var roomTemperature : Float // The current ThermoStat sensed Room Temperature
+    var setPointTemperature : Int // The current setting of desired Temperature
+    var humidity : Float // The current ThermoStat sensed Room Humidity
+    var batteryLevel : Int // The battery Level of the corresponding ThermoStat
+    var mode : String // Mode could be off, cool, heat or Fan
+    var status : String // I actually forgot about this one, but are you really reading my comments?
+    var siteKey : Int // Forgot, just have it there
+    var siteName : String // Forgot, just have it there
 //    var siteTemperature : Float
     
     init(index : Int, json : JSON) {
@@ -215,6 +254,7 @@ class SensiInfo {
 //        siteTemperature = json["devices"][index]["sitetemperature"].floatValue!
     }
     
+    // The printable representation of this object
     func printMe() {
         var namespace = "deviceKey: " + String(deviceKey) + ", deviceName: " + deviceName
         println("**********" + namespace + "*********")
