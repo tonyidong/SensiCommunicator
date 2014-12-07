@@ -33,6 +33,9 @@ class Communicator {
     // The Learned Curve and Suggested Curve, will be presented as a list of Object
     var pattern : [DeviceData]
     
+    // Current Weather, updated everytime get weather is called
+    var weather: Dictionary<String, String>
+    
     // For Core Location
     var locationManager : CLLocationManager
     
@@ -46,6 +49,7 @@ class Communicator {
         isController = false
         sensiInfoAry = Array<SensiInfo>()
         pattern = Array<DeviceData>()
+        weather = Dictionary<String, String>()
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -129,7 +133,7 @@ class Communicator {
        
         let task = NSURLSession.sharedSession().dataTaskWithURL(weatherBaseURL!) {(data, response, error) in
             
-             var json = JSON(data: data)
+            var json = JSON(data: data)
             println(json["current_observation"]["temperature_string"].stringValue)
             
             toReturn["temperature"] = json["current_observation"]["temperature_string"].stringValue
@@ -137,10 +141,15 @@ class Communicator {
             println(toReturn["temperature"])
 //            toReturn["temp_f"] = json["current_observation"]["temp_f"].stringValue
             
+            self.weather = toReturn
+            
         }
         
         task.resume()
         
+        println("--------------------------")
+        println(toReturn["temperature"])
+        println("--------------------------")
         return toReturn
     }
     
@@ -157,6 +166,7 @@ class Communicator {
         let task = NSURLSession.sharedSession().dataTaskWithURL(request) {(data, response, error) in
             var json = JSON(data: data)
             var len = json["count"].integerValue
+            
             for i in 0...(len!-1) {
                 toReturnAry.append(SensiInfo(index: i, json: json))
             }
@@ -190,7 +200,7 @@ class Communicator {
             var len = json["count"].integerValue
             println(json["data"][0]["sugg_temperature"])
             for var i = 0; i < len; i++ {
-                toReturn.append(DeviceData(stamp: json["data"][i]["timestamp_utc"].integerValue!, suggest: json["data"][i]["sugg_temperature"].floatValue!, sensed: json["data"][i]["sensed_temperature"].floatValue!))
+                toReturn.append(DeviceData(stamp: json["data"][i]["timestamp_utc"].integerValue!, suggest: json["data"][i]["sugg_temperature"].floatValue!, sensed: json["data"][i]["recent_roomtemperature"].floatValue!))
             }
             
         }

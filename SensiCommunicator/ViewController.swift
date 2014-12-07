@@ -34,10 +34,12 @@ class ViewController: UIViewController {
         
         communicator.getPattern(NSDate(timeIntervalSince1970: 12312), endTime: NSDate())
         
-        let dict = communicator.getWeatherForZip("63130")
+        communicator.getWeatherForZip("63130")
+        
+        
         
         println("*****************************")
-        println(dict["temperature"])
+        println(communicator.weather["temperature"])
         println("*****************************")
         
         
